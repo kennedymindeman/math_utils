@@ -12,6 +12,13 @@ class Function:
     terms: list[Term]
 
 
+def newtons_method(guess, function, iterations):
+    for _ in range(iterations):
+        guess = iterate_root_guess(guess, function)
+
+    return guess
+
+
 def iterate_root_guess(guess, function):
     derivative = differentiate(function)
     value_at_guess = evaluate(guess, function)
