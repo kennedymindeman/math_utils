@@ -1,4 +1,10 @@
-from newtons_method import (Function, Term, differentiate, iterate_root_guess, newtons_method)
+from newtons_method import (
+    Function,
+    Term,
+    differentiate,
+    iterate_root_guess,
+    newtons_method,
+)
 
 
 def test_differentiate():

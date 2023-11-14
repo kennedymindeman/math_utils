@@ -39,6 +39,6 @@ def differentiate(function: Function):
 
 def evaluate(x_input, function: Function):
     def evaluate_term(term: Term):
-        return term.coefficient * (x_input ** term.power)
+        return term.coefficient * (x_input**term.power)
 
     return sum(evaluate_term(term) for term in function.terms)
