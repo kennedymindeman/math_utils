@@ -1,5 +1,2 @@
-from typing import Callable
-
-
-def iterate_root_guess(guess: float, function: Callable, derivative: Callable) -> float:
+def iterate_root_guess(guess, function, derivative):
     return guess - function(guess) / derivative(guess)
