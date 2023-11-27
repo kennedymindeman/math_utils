@@ -1,3 +1,4 @@
+from armstrong import is_armstrong_number
 from newtons_method import (
     Function,
     Term,
@@ -29,3 +30,18 @@ def test_newtons_method():
     guess = -1
     root_approx = newtons_method(guess, function, 3)
     assert root_approx == -1.325200398950907
+
+
+def test_armstrong_number():
+    assert is_armstrong_number(153)
+    assert is_armstrong_number(370)
+
+
+def test_single_digit_numbers():
+    for i in range(10):
+        assert is_armstrong_number(i)
+
+
+def test_non_armstrong_numbers():
+    assert not is_armstrong_number(154)
+    assert not is_armstrong_number(783)
