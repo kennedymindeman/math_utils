@@ -14,7 +14,7 @@ def test_differentiate():
 def test_iterate_root_guess():
     function = Function(tuple([PolynomialTerm(1, 3), PolynomialTerm(-1, 1), PolynomialTerm(1, 0)]))
     guess = -1
-    guess = (guess, function)
+    guess = iterate_root_guess(guess, function)
     assert guess == -1.5
     guess = iterate_root_guess(guess, function)
     assert guess == -1.3478260869565217
