@@ -34,12 +34,6 @@ class Rational:
 
         return b
 
-    def __repr__(self):
-        return f"Rational({self.numerator}, {self.denominator})"
-
-    def __str__(self):
-        return self.__repr__()
-
     def __eq__(self, other):
         if type(other) == int:
             return self.denominator == 1 and self.numerator == other
