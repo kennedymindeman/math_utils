@@ -18,5 +18,4 @@ def test_lhs_multiplication():
 
     for test_case, expected in test_cases.items():
         a, b = test_case
-        breakpoint()
         assert a * b == expected
