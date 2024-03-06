@@ -12,8 +12,8 @@ class Function:
     terms: list[Term]
 
 
-def newtons_method(guess, function, iterations):
-    for _ in range(iterations):
+def newtons_method(guess, function, num_iterations):
+    for _ in range(num_iterations):
         guess = iterate_root_guess(guess, function)
 
     return guess
