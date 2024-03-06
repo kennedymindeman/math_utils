@@ -13,6 +13,8 @@ class TermABC:
     def differentiate(self) -> TermABC:
         raise ValueError
 
+    def is_constant(self) -> bool:
+        raise ValueError
 
 @dataclass(frozen=True)
 class PolynomialTerm(TermABC):
@@ -25,10 +27,13 @@ class PolynomialTerm(TermABC):
         return self.coefficient * (x ** self.power)
 
     def differentiate(self):
-        if self.power == 0:
+        if self.coefficient == 0:
             raise NotImplementedError
 
         return PolynomialTerm(self.coefficient * self.power, self.power - 1)
+
+    def is_constant(self):
+        return self.power == 0
 
 
 @dataclass(frozen=True)
@@ -39,4 +44,4 @@ class Function:
         return sum(term.evaluate(x) for term in self.terms)
 
     def differentiate(self):
-        return Function(tuple(term.differentiate() for term in self.terms))
+        return Function(tuple(term.differentiate() for term in self.terms if not term.is_constant()))
